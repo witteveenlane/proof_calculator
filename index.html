@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Whisky Proof Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Whisky Proof Calculator</h1>
+
+<form>
+<label for="amount">Amount of whisky in oz:</label>
+<input type="number" step="0.01" id="amount" name="amount" required>
+</select><br><br>
+
+<label for="proof">Proof of whisky:</label>
+<input type="number" step="0.01" id="proof" name="proof" min="1" max="199" required><br><br>
+
+<label for="desired-proof">Desired proof:</label>
+<input type="number" step="0.01" id="desired-proof" name="desired-proof" min="1" max="199" required><br><br>
+
+<input type="submit" value="Calculate">
+</form>
+
+<p id="result"></p>
+
+<script>
+const form = document.querySelector('form');
+const result = document.querySelector('#result');
+
+form.addEventListener('submit', (event) => {
+event.preventDefault();
+
+const amount = parseFloat(document.querySelector('#amount').value);
+const proof = parseFloat(document.querySelector('#proof').value);
+const desiredProof = parseFloat(document.querySelector('#desired-proof').value);
+
+if (proof <= desiredProof || proof > 199) {
+result.textContent = 'Error: Please enter a valid proof and desired proof.';
+return;
+}
+
+let waterNeeded = ((proof / desiredProof) - 1) * amount;
+let waterOunces = waterNeeded;
+let waterMilliliters = waterNeeded * 29.5735; // convert to ml
+
+result.textContent = `Add ${waterOunces.toFixed(2)} ounces (${waterMilliliters.toFixed(2)} milliliters) of water to the whisky, to bring the proof down to ${desiredProof} proof.`;
+});
+</script>
+</body>
+</html>
+
