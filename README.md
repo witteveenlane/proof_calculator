@@ -1,6 +1,6 @@
 # Whisky Proof Calculator
 
-tinyurl.com/7eay8k4k
+[LINK](tinyurl.com/7eay8k4k)
 
 This simple whisky-water proof dilution calculator tool is designed to help whiskey enthusiasts and professionals accurately calculate the amount of water needed to dilute a given quantity of whiskey to a desired proof. The calculator takes into account the initial proof of the whiskey and the desired final proof, and provides the user with the exact amount of water needed to achieve the desired dilution.
 
